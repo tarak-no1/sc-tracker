@@ -3,7 +3,7 @@ import { CustomRequest } from '../types/custom';
 import { Price } from '../models/Price';
 
 export const getPrices = async (req: CustomRequest, res: Response, next: NextFunction) => {
-  const { symbol } = req.query;
+  const { symbol } = req.params;
   const prices = await Price.find({ symbol }).sort({ timestamp: -1 }).limit(20);
   res.json(prices);
 };
