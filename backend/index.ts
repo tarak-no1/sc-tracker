@@ -44,7 +44,7 @@ const pollInterval = config.getNumber('server', 'poll_interval', 5000);
 // Create a new StockMiner instance with the specified symbols
 const stockMiner = new StockMiner(symbols);
 // Start polling for stock prices at the specified interval
-// stockMiner.startPolling(pollInterval);
+stockMiner.startPolling(pollInterval);
 
 // Start the Express server and listen on the specified port
 app.listen(PORT, () => {
